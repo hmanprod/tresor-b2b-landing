@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trésor d'Épices B2B | Kit Découverte Pro — Vanille Bourbon & Épices de Madagascar</title>
+    <meta name="description"
+        content="Offre réservée aux professionnels immatriculés (SIRET). Recevez gratuitement votre Kit Découverte de gousses de vanille Bourbon Gourmet & épices de nos plantations à Madagascar.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+    <meta name="googlebot" content="noindex, nofollow">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+
+    <!-- Bootstrap Grid -->
+    <link rel="stylesheet" href="https://www.tresordepices.fr/wp-content/themes/lettery/assets/css/bootstrap.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Design Tokens - Trésor d'Épices (Maison Gastronomique B2B) */
+        :root {
+            --color-primary: #3d8840;
+            /* Vert Épice Signature */
+            --color-primary-hover: #2d682f;
+            --color-chocolate: #2c1a14;
+            /* Brun Chocolat Signature Gastronomie */
+            --color-chocolate-light: #3e261e;
+            --color-secondary: #c98e28;
+            /* Or Vanille / Amber */
+            --color-dark: #181d19;
+            /* Noir Ardoise */
+            --color-dark-surface: #222924;
+            --color-light: #f9f7f2;
+            /* Blanc Cassé Crème Gastronomie */
+            --color-white: #ffffff;
+            --color-gray-100: #f0ece3;
+            --color-gray-300: #d6d0c2;
+            --color-gray-600: #686e69;
+            --color-gray-800: #2d332f;
+
+            --font-title: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+            --shadow-sm: 0 4px 12px rgba(44, 26, 20, 0.04);
+            --shadow-md: 0 12px 28px rgba(44, 26, 20, 0.08);
+            --shadow-lg: 0 24px 48px rgba(44, 26, 20, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-pill: 50px;
+
+            --transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Base Resets */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-light);
+            color: var(--color-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-title);
+            color: var(--color-dark);
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            line-height: 1.25;
+        }
+
+        p {
+            color: var(--color-gray-600);
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+
+        .section-py {
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+
+        .bg-white {
+            background-color: var(--color-white) !important;
+        }
+
+        .bg-light {
+            background-color: var(--color-light) !important;
+        }
+
+        .bg-chocolate {
+            background-color: var(--color-chocolate) !important;
+            color: var(--color-white) !important;
+        }
+
+        .bg-dark {
+            background-color: var(--color-dark) !important;
+            color: var(--color-white) !important;
+        }
+
+        /* Style 1: Badge Pilule (Reservé aux Promesses et Infos Commerciales Clés) */
+        .badge-urgency {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(201, 142, 40, 0.12);
+            color: #9e6b13;
+            font-family: var(--font-title);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 8px 18px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(201, 142, 40, 0.25);
+            margin-bottom: 20px;
+        }
+
+        .badge-urgency i {
+            color: var(--color-secondary);
+        }
+
+        /* Style 2: Surtitre Éditorial (Clean, Gastronomique, sans pilule) */
+        .eyebrow-editorial {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--color-secondary);
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        /* Buttons (Élégance Gastronomique B2B) */
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            border: 2px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-cta-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white) !important;
+        }
+
+        .btn-cta-primary:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(61, 136, 64, 0.28);
+        }
+
+        .btn-cta-chocolate {
+            background-color: var(--color-chocolate);
+            color: var(--color-white) !important;
+        }
+
+        .btn-cta-chocolate:hover {
+            background-color: var(--color-chocolate-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-cta-secondary {
+            background-color: transparent;
+            border-color: var(--color-chocolate);
+            color: var(--color-chocolate) !important;
+        }
+
+        .btn-cta-secondary:hover {
+            background-color: var(--color-chocolate);
+            color: var(--color-white) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Header B2B Hermétique */
+        .b2b-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(249, 247, 242, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-gray-100);
+            padding: 14px 0;
+        }
+
+        .b2b-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .b2b-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .b2b-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .b2b-logo-tag {
+            background-color: var(--color-chocolate);
+            color: var(--color-secondary);
+            font-family: var(--font-title);
+            font-weight: 800;
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .nav-links-b2b {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links-b2b a {
+            text-decoration: none;
+            color: var(--color-gray-800);
+            font-family: var(--font-title);
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links-b2b a:hover {
+            color: var(--color-primary);
+        }
+
+        .header-whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #25d366;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        /* Hero Section */
+        .b2b-hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, rgba(44, 26, 20, 0.03) 0%, rgba(249, 247, 242, 1) 60%);
+            position: relative;
+        }
+
+        .hero-h1 {
+            font-size: 3.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            color: var(--color-chocolate);
+        }
+
+        .hero-h1 span {
+            color: var(--color-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 580px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 36px;
+        }
+
+        .hero-guarantee-strip {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--color-gray-600);
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .hero-guarantee-strip i {
+            color: var(--color-primary);
+        }
+
+        .hero-visual-card {
+            position: relative;
+            background: var(--color-white);
+            padding: 16px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-gray-100);
+        }
+
+        .hero-visual-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            display: block;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: var(--color-white);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            z-index: 5;
+        }
+
+        .floating-badge-1 {
+            top: 25px;
+            left: -20px;
+        }
+
+        .floating-badge-2 {
+            bottom: 35px;
+            right: -15px;
+        }
+
+        .floating-badge-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: rgba(61, 136, 64, 0.1);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+        }
+
+        .floating-badge h5 {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .floating-badge p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: var(--color-gray-600);
+        }
+
+        /* Authority Bar */
+        .authority-bar {
+            background-color: var(--color-white);
+            border-top: 1px solid var(--color-gray-100);
+            border-bottom: 1px solid var(--color-gray-100);
+            padding: 32px 0;
+        }
+
+        .authority-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .authority-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-light);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid var(--color-gray-300);
+        }
+
+        .authority-text h5 {
+            margin: 0 0 3px 0;
+            font-size: 1rem;
+        }
+
+        .authority-text p {
+            margin: 0;
+            font-size: 0.82rem;
+            color: var(--color-gray-600);
+        }
+
+        /* 3 Steps "Comment ça marche" Section */
+        .step-b2b-box {
+            background: var(--color-white);
+            padding: 32px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-gray-100);
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-chocolate);
+            color: var(--color-secondary);
+            font-family: var(--font-title);
+            font-size: 1.3rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px auto;
+        }
+
+        /* Segmentation Tabs & Visuals */
+        .tab-button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-300);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--color-gray-800);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background-color: var(--color-chocolate);
+            color: var(--color-white);
+            border-color: var(--color-chocolate);
+        }
+
+        .tab-pane-content {
+            display: none;
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-gray-100);
+        }
+
+        .tab-pane-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-check-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 28px 0;
+        }
+
+        .metier-img {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            display: block;
+            margin-left: auto;
+        }
+
+        .feature-check-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--color-gray-800);
+        }
+
+        .feature-check-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--color-primary);
+            font-size: 1.05rem;
+        }
+
+        /* Storytelling Terroir Section (Brun Chocolat) */
+        .terroir-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            padding: 28px;
+            height: 100%;
+        }
+
+        .terroir-card h4 {
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+        }
+
+        .terroir-card p {
+            color: rgba(255, 255, 255, 0.75);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* 2-Step Qualification Form */
+        .form-b2b-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-gray-100);
+            position: relative;
+        }
+
+        .form-progress-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+
+        .progress-step-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--color-gray-600);
+            padding: 8px 16px;
+            border-radius: var(--radius-pill);
+            background: var(--color-light);
+            border: 1px solid var(--color-gray-300);
+        }
+
+        .progress-step-pill.active {
+            background: var(--color-chocolate);
+            color: var(--color-white);
+            border-color: var(--color-chocolate);
+        }
+
+        .progress-step-pill span.step-num {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .kit-selector-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .kit-card-option {
+            background: var(--color-light);
+            border: 2px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            padding: 18px 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .kit-card-option:hover,
+        .kit-card-option.selected {
+            border-color: var(--color-primary);
+            background: var(--color-white);
+            box-shadow: 0 6px 20px rgba(61, 136, 64, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .kit-card-option.selected::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            color: var(--color-primary);
+            font-size: 0.85rem;
+        }
+
+        .kit-card-icon {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .kit-card-title {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--color-dark);
+            margin-bottom: 2px;
+        }
+
+        .kit-card-desc {
+            font-size: 0.75rem;
+            color: var(--color-gray-600);
+            margin: 0 0 10px 0;
+        }
+
+        .kit-card-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-family: var(--font-title);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            background: rgba(61, 136, 64, 0.1);
+            color: var(--color-primary);
+            border: 1px solid rgba(61, 136, 64, 0.25);
+            transition: var(--transition);
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .kit-card-option.selected .kit-card-btn {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+
+        .form-section-title {
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--color-chocolate);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-label-custom {
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--color-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-label-custom span.label-hint {
+            font-size: 0.72rem;
+            color: var(--color-secondary);
+            font-weight: 600;
+            text-transform: none;
+        }
+
+        .input-custom {
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid var(--color-gray-300);
+            background: var(--color-light);
+            font-family: var(--font-body);
+            font-size: 0.92rem;
+            color: var(--color-dark);
+            transition: var(--transition);
+        }
+
+        .input-custom:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: var(--color-white);
+            box-shadow: 0 0 0 4px rgba(61, 136, 64, 0.12);
+        }
+
+        .input-highlight {
+            border-color: var(--color-secondary);
+            background-color: rgba(201, 142, 40, 0.03);
+        }
+
+        /* Form Step Display */
+        .form-step-pane {
+            display: none;
+        }
+
+        .form-step-pane.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* FAQ Accordion ARIA Accessible */
+        .faq-card {
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            margin-bottom: 14px;
+            border: 1px solid var(--color-gray-100);
+            overflow: hidden;
+        }
+
+        .faq-head {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-head h4 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .faq-icon-toggle {
+            color: var(--color-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+            padding: 0 24px;
+        }
+
+        .faq-body p {
+            margin: 0;
+            padding-bottom: 20px;
+            font-size: 0.92rem;
+        }
+
+        .faq-card.active {
+            border-color: rgba(61, 136, 64, 0.3);
+        }
+
+        .faq-card.active .faq-icon-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-card.active .faq-body {
+            max-height: 300px;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(24, 29, 25, 0.78);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-box {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 520px;
+            padding: 44px 36px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.94);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-close-icon {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            font-size: 1.2rem;
+            color: var(--color-gray-600);
+            cursor: pointer;
+        }
+
+        .modal-success-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(61, 136, 64, 0.1);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 20px auto;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 991px) {
+            .hero-h1 {
+                font-size: 2.5rem;
+            }
+
+            .b2b-hero {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .form-b2b-card {
+                padding: 32px 20px;
+            }
+
+            .tab-pane-content {
+                padding: 28px 20px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hero-h1 {
+                font-size: 2.1rem;
+            }
+
+            .btn-cta {
+                width: 100%;
+            }
+
+            .authority-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .authority-icon {
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. Header B2B Hermétique -->
+    <header class="b2b-header">
+        <div class="container">
+            <a href="#hero" class="b2b-logo">
+                <img src="https://www.tresordepices.fr/wp-content/uploads/2022/01/TdE_logo.png"
+                    alt="Trésor d'Épices B2B Logo">
+                <span class="b2b-logo-tag">Pro & Chefs</span>
+            </a>
+            <ul class="nav-links-b2b d-none d-md-flex">
+                <li><a href="#fonctionnement">Fonctionnement</a></li>
+                <li><a href="#metiers">Votre Secteur</a></li>
+                <li><a href="#origine">Origine Madagascar</a></li>
+                <li><a href="#form-qualification">Commander un Kit</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="https://wa.me/33600000000?text=Bonjour%20Tr%C3%A9sor%20d%27%C3%89pices%2C%20je%20suis%20un%20professionnel"
+                    class="header-whatsapp-link d-none d-lg-inline-flex" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Pro
+                </a>
+                <a href="#form-qualification" class="btn-cta btn-cta-primary"
+                    style="padding: 10px 18px; font-size: 0.85rem;">
+                    Demander mon Kit Pro
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section (Pilule Promesse Commerciale : KIT PRO OFFERT • SIRET REQUIS) -->
+    <section id="hero" class="b2b-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <!-- Badge Pilule Commercial Raccourci -->
+                    <div class="badge-urgency">
+                        <i class="fa-solid fa-building-circle-check"></i> Kit Pro Offert • SIRET Requis
+                    </div>
+                    <h1 class="hero-h1">
+                        Testez la qualité de Madagascar <span>dans votre établissement</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Approvisionnement direct de nos plantations à Sambava. Recevez un Kit Découverte complet
+                        (gousses de vanille Bourbon Gourmet & épices rares) réservé aux professionnels de la
+                        restauration et du commerce.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#form-qualification" class="btn-cta btn-cta-primary">
+                            <i class="fa-solid fa-box-open"></i> Commander mon Kit Pro + Tarifs PDF
+                        </a>
+                    </div>
+
+                    <div class="hero-guarantee-strip">
+                        <span><i class="fa-solid fa-id-card"></i> SIRET (14 chiffres) Requis</span>
+                        <span><i class="fa-solid fa-truck-fast"></i> Envoi Colissimo Pro 48h</span>
+                        <span><i class="fa-solid fa-receipt"></i> Facturation HT</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="hero-visual-card">
+                        <div class="floating-badge floating-badge-1">
+                            <div class="floating-badge-icon">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h5>Direct Sambava</h5>
+                                <p>Taux de vanilline certifié</p>
+                            </div>
+                        </div>
+
+                        <div class="floating-badge floating-badge-2">
+                            <div class="floating-badge-icon">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <div>
+                                <h5>Priorité aux Pros</h5>
+                                <p>Validation dossier sous 24h</p>
+                            </div>
+                        </div>
+
+                        <img src="https://www.tresordepices.fr/wp-content/uploads/2024/11/vanille_3gousses_16cm_2tubes_fond_fefffa_1200x1200.jpg"
+                            alt="Vanille Bourbon Noire Gourmet Trésor d'Épices">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Authority Bar -->
+    <section class="authority-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-3 mb-md-0">
+                    <div class="authority-item">
+                        <div class="authority-icon"><i class="fa-solid fa-id-card-clip"></i></div>
+                        <div class="authority-text">
+                            <h5>Numéro SIRET Requis</h5>
+                            <p>Attribution réservée aux pros</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3 mb-md-0">
+                    <div class="authority-item">
+                        <div class="authority-icon"><i class="fa-solid fa-tree"></i></div>
+                        <div class="authority-text">
+                            <h5>100% Direct Producteur</h5>
+                            <p>Culture & affinage à Sambava</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="authority-item">
+                        <div class="authority-icon"><i class="fa-solid fa-box"></i></div>
+                        <div class="authority-text">
+                            <h5>Sous-Vide Certifié</h5>
+                            <p>Conservation 24 mois pro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="authority-item">
+                        <div class="authority-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div class="authority-text">
+                            <h5>Conseiller Dédié</h5>
+                            <p>Validation sous 24h ouvrées</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Comment ça marche en 3 étapes (Surtitre Éditorial : RECEVEZ VOTRE KIT EN 3 ÉTAPES) -->
+    <section id="fonctionnement" class="section-py bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <!-- Surtitre Éditorial Gastronomique (sans pilule) -->
+                <span class="eyebrow-editorial">Recevez votre kit en 3 étapes</span>
+                <h2>Un parcours simple pensé pour les professionnels</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-b2b-box">
+                        <div class="step-number">1</div>
+                        <h4>Choisissez votre Kit</h4>
+                        <p>Sélectionnez le pack adapté à votre secteur (Restaurateur, Artisan, Épicerie Fine, Hôtel).
+                        </p>
+                        <a href="#form-qualification" class="btn-cta btn-cta-secondary"
+                            style="padding: 8px 18px; font-size: 0.82rem; margin-top: 10px; width: 100%;">
+                            <i class="fa-solid fa-box-open"></i> Sélectionner mon kit pro
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-b2b-box">
+                        <div class="step-number">2</div>
+                        <h4>Saisissez votre SIRET</h4>
+                        <p>Renseignez votre SIRET (14 chiffres) et vos coordonnées pro en moins d'une minute.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-b2b-box">
+                        <div class="step-number">3</div>
+                        <h4>Réception 48h Colissimo Pro</h4>
+                        <p>Après validation de votre dossier sous 24h, recevez votre kit sous-vide directement en
+                            cuisine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Offres & Kits Découverte par Secteur (Surtitre Éditorial : UN KIT ADAPTÉ À VOTRE MÉTIER) -->
+    <section id="metiers" class="section-py bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <!-- Surtitre Éditorial Gastronomique -->
+                <span class="eyebrow-editorial">Un kit adapté à votre métier</span>
+                <h2>Des compositions pensées pour chaque profession</h2>
+            </div>
+
+            <!-- Tab Buttons ARIA Accessible -->
+            <div class="tab-button-group" role="tablist" aria-label="Kits Découverte par Secteur">
+                <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="metier-pane-0" id="tab-0"
+                    onclick="switchMetier(0)">Restaurateurs & Chefs</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="metier-pane-1" id="tab-1"
+                    onclick="switchMetier(1)">Artisans Glaciers & Pâtissiers</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="metier-pane-2" id="tab-2"
+                    onclick="switchMetier(2)">Épiceries Fines & Revendeurs</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="metier-pane-3" id="tab-3"
+                    onclick="switchMetier(3)">Hôtels & Pôles Restauration</button>
+            </div>
+
+            <!-- Tab Content 0: Chefs -->
+            <div class="tab-pane-content active" id="metier-pane-0" role="tabpanel" aria-labelledby="tab-0">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Kit Découverte Chefs & Restaurateurs</h3>
+                        <p>Des gousses noires Gourmet souples et charnues, idéales pour libérer un parfum intense et des
+                            grains généreux dans vos crémeux, sauces et desserts signatures.</p>
+                        <ul class="feature-check-list">
+                            <li><i class="fa-solid fa-circle-check"></i> 3 Gousses Vanille Bourbon Noire Gourmet (14-16 cm)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Fiche technique accords mets, sauces & desserts</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Grille tarifaire dégressive spéciale restauration HT</li>
+                        </ul>
+                        <button onclick="selectKitAndScroll('kit_restauration')" class="btn-cta btn-cta-primary">
+                            <i class="fa-solid fa-box-open"></i> Demander le Kit Restaurateurs
+                        </button>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center mt-4 mt-lg-0">
+                        <img src="assets/img/chef_restaurateur.jpg"
+                            alt="Chef restaurateur sélectionnant des gousses de vanille Bourbon"
+                            class="metier-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 1: Artisans -->
+            <div class="tab-pane-content" id="metier-pane-1" role="tabpanel" aria-labelledby="tab-1">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Kit Découverte Artisans Glaciers & Pâtissiers</h3>
+                        <p>Des gousses riches en vanilline (1,6 à 2,4 %) pour sublimer vos glaces, crèmes,
+                            ganaches et entremets avec un parfum naturel incomparable.</p>
+                        <ul class="feature-check-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Gousses Noire Gourmet & TK d'extraction riches en vanilline</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Conseils de dosage au kilo pour turbines & crèmes</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Fiche technique d'incorporation & conseils pro</li>
+                        </ul>
+                        <button onclick="selectKitAndScroll('kit_artisans')" class="btn-cta btn-cta-primary">
+                            <i class="fa-solid fa-box-open"></i> Demander le Kit Artisans
+                        </button>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center mt-4 mt-lg-0">
+                        <img src="assets/img/patissier.jpg"
+                            alt="Pâtissière préparant un dessert à la vanille Bourbon"
+                            class="metier-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 2: Épiceries Fines -->
+            <div class="tab-pane-content" id="metier-pane-2" role="tabpanel" aria-labelledby="tab-2">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Kit Découverte Épiceries Fines & Revendeurs</h3>
+                        <p>Offrez à votre clientèle exigeante un produit d'exception au packaging élégant. Histoire
+                            forte de la plantation familiale à valoriser en boutique.</p>
+                        <ul class="feature-check-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Tubes en verre de présentation (3 & 5 gousses 16 cm)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Étui cadeau Vanille Bourbon Noire Gourmet</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Catalogue revendeur & conditions de marge boutique</li>
+                        </ul>
+                        <button onclick="selectKitAndScroll('kit_epicerie')" class="btn-cta btn-cta-primary">
+                            <i class="fa-solid fa-box-open"></i> Demander le Kit Revendeur
+                        </button>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center mt-4 mt-lg-0">
+                        <img src="assets/img/epicier.jpg"
+                            alt="Épicière fine présentant des tubes de vanille Bourbon"
+                            class="metier-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 3: Hôtels -->
+            <div class="tab-pane-content" id="metier-pane-3" role="tabpanel" aria-labelledby="tab-3">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Kit Découverte Hôtels & Pôles Restauration</h3>
+                        <p>Assurez une qualité constante sur l'ensemble de vos points de vente culinaire. Contrats
+                            d'approvisionnement annuel et tarifs préférentiels par volume.</p>
+                        <ul class="feature-check-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Conditionnements sous-vide pro (100 g, 250 g, 10 gousses 17-18 cm)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Conditions d'approvisionnement grands comptes</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Étude personnalisée de cadencement des stocks</li>
+                        </ul>
+                        <button onclick="selectKitAndScroll('kit_hotel')" class="btn-cta btn-cta-primary">
+                            <i class="fa-solid fa-box-open"></i> Demander le Kit Hôtellerie
+                        </button>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center mt-4 mt-lg-0">
+                        <img src="assets/img/serveur_hotel.jpg"
+                            alt="Maître d'hôtel présentant la vanille Bourbon de Madagascar"
+                            class="metier-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Origine & Savoir-Faire Madagascar (Pilule Identité Marque : SAMBAVA • RÉGION SAVA) -->
+    <section id="origine" class="section-py bg-chocolate">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <!-- Badge Pilule Commercial/Marque conservé -->
+                    <span class="badge-urgency"
+                        style="background: rgba(201, 142, 40, 0.2); color: var(--color-secondary); border-color: rgba(201, 142, 40, 0.4);">
+                        <i class="fa-solid fa-location-dot"></i> Sambava • Région Sava
+                    </span>
+                    <h2 style="color: var(--color-white); font-size: 2.5rem;">Un savoir-faire familial de la plantation
+                        à votre cuisine</h2>
+                    <p style="color: rgba(255,255,255,0.85);">
+                        Originaires de Madagascar, nous cultivons et sélectionnons nos gousses de vanille selon les
+                        traditions ancestrales d'échaudage et d'affinage au soleil puis à l'ombre. Notre présence
+                        directe sur place vous garantit une traçabilité irréprochable et un rapport qualité/prix direct
+                        producteur.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                    <img src="https://www.tresordepices.fr/wp-content/uploads/2024/10/vanille_verte_bandeau-1920x963.jpg"
+                        alt="Plantation de Vanille Verte à Sambava Madagascar"
+                        style="max-width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); height: 320px; object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="terroir-card">
+                        <h4><i class="fa-solid fa-seedling"></i> Culture Raisonnée</h4>
+                        <p>Pollinisation manuelle fleur à fleur et croissance naturelle sans engrais chimiques dans le
+                            respect du terroir malgache.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="terroir-card">
+                        <h4><i class="fa-solid fa-sun"></i> Affinage Traditionnel</h4>
+                        <p>Séchage patient de plusieurs mois sur des clayettes en bois pour révéler des notes cacaotées
+                            et parfumées uniques.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="terroir-card">
+                        <h4><i class="fa-solid fa-handshake-angle"></i> Commerce Équitable</h4>
+                        <p>Partenariat direct et équitable garantissant des revenus justes pour les producteurs de nos
+                            plantations partenaires.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Formulaire de Qualification (Pilule Promesse Conversion : DEMANDE EXPRESS EN 2 ÉTAPES) -->
+    <section id="form-qualification" class="section-py bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="form-b2b-card">
+
+                        <div class="text-center mb-4">
+                            <!-- Badge Pilule Commercial Conversion conservé -->
+                            <span class="badge-urgency"><i class="fa-solid fa-file-circle-check"></i> Demande Express en
+                                2 Étapes</span>
+                            <h2>Commander votre Kit Découverte Pro Gratuit</h2>
+                            <p style="font-size: 0.9rem;">Temps estimé : moins d'une minute • Réservé aux établissements
+                                immatriculés (SIRET).</p>
+                        </div>
+
+                        <!-- Progress Bar Indicator -->
+                        <div class="form-progress-bar">
+                            <div class="progress-step-pill active" id="step-pill-1">
+                                <span class="step-num">1</span> Étape 1 : Votre Établissement
+                            </div>
+                            <div class="progress-step-pill" id="step-pill-2">
+                                <span class="step-num">2</span> Étape 2 : Vos Coordonnées
+                            </div>
+                        </div>
+
+                        <form id="b2bQualificationForm" onsubmit="handleFormSubmit(event)">
+                            <input type="hidden" id="b2b_selected_kit" value="kit_restauration">
+
+                            <!-- ÉTAPE 1 : Choix Kit + SIRET + Email -->
+                            <div class="form-step-pane active" id="form-step-1">
+                                <div class="form-section-title">
+                                    <i class="fa-solid fa-box-open"></i> 1. Choisissez votre Kit & Renseignez votre
+                                    SIRET
+                                </div>
+
+                                <div class="kit-selector-grid">
+                                    <div class="kit-card-option selected" id="card_kit_restauration"
+                                        onclick="selectKitCard('kit_restauration')">
+                                        <div class="kit-card-icon"><i class="fa-solid fa-utensils"></i></div>
+                                        <div class="kit-card-title">Kit Restaurateurs</div>
+                                        <p class="kit-card-desc">Chefs & Restauration</p>
+                                        <span class="kit-card-btn"><i class="fa-solid fa-check"></i> Sélectionné</span>
+                                    </div>
+                                    <div class="kit-card-option" id="card_kit_artisans"
+                                        onclick="selectKitCard('kit_artisans')">
+                                        <div class="kit-card-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                                        <div class="kit-card-title">Kit Artisans</div>
+                                        <p class="kit-card-desc">Pâtissiers & Glaciers</p>
+                                        <span class="kit-card-btn"><i class="fa-solid fa-plus"></i> Choisir ce
+                                            kit</span>
+                                    </div>
+                                    <div class="kit-card-option" id="card_kit_epicerie"
+                                        onclick="selectKitCard('kit_epicerie')">
+                                        <div class="kit-card-icon"><i class="fa-solid fa-store"></i></div>
+                                        <div class="kit-card-title">Kit Revendeurs</div>
+                                        <p class="kit-card-desc">Épiceries Fines</p>
+                                        <span class="kit-card-btn"><i class="fa-solid fa-plus"></i> Choisir ce
+                                            kit</span>
+                                    </div>
+                                    <div class="kit-card-option" id="card_kit_hotel"
+                                        onclick="selectKitCard('kit_hotel')">
+                                        <div class="kit-card-icon"><i class="fa-solid fa-hotel"></i></div>
+                                        <div class="kit-card-title">Kit Hôtellerie</div>
+                                        <p class="kit-card-desc">Hôtels & Grands Comptes</p>
+                                        <span class="kit-card-btn"><i class="fa-solid fa-plus"></i> Choisir ce
+                                            kit</span>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_company">Nom de l'Établissement /
+                                            Société *</label>
+                                        <input type="text" id="b2b_company" class="input-custom"
+                                            placeholder="Ex. Le Gourmet de Paris" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_siret">
+                                            Numéro SIRET (14 chiffres) *
+                                            <span class="label-hint"><i class="fa-solid fa-shield-halved"></i>
+                                                Obligatoire pour validation</span>
+                                        </label>
+                                        <input type="text" id="b2b_siret" class="input-custom input-highlight"
+                                            placeholder="Ex. 123 456 789 00012" maxlength="18" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_email">Email Professionnel *</label>
+                                        <input type="email" id="b2b_email" class="input-custom"
+                                            placeholder="Ex. chef@etablissement.com" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_city">Ville & Code Postal *</label>
+                                        <input type="text" id="b2b_city" class="input-custom"
+                                            placeholder="Ex. 75008 Paris" required>
+                                    </div>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button type="button" onclick="goToStep(2)" class="btn-cta btn-cta-primary"
+                                        style="width: 100%; max-width: 420px;">
+                                        Continuer vers les détails d'envoi (1/2) <i class="fa-solid fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ÉTAPE 2 : Contact & Qualification -->
+                            <div class="form-step-pane" id="form-step-2">
+                                <div class="form-section-title">
+                                    <i class="fa-solid fa-user-tie"></i> 2. Vos Coordonnées Directes d'Expédition
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_fullname">Nom & Prénom *</label>
+                                        <input type="text" id="b2b_fullname" class="input-custom"
+                                            placeholder="Ex. Marc Veyrat">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_role">Votre Fonction *</label>
+                                        <select id="b2b_role" class="input-custom">
+                                            <option value="">Sélectionnez votre poste</option>
+                                            <option value="chef_cuisinier">Chef de Cuisine / Pâtissier</option>
+                                            <option value="gerant_proprietaire">Gérant / Propriétaire</option>
+                                            <option value="responsable_achats">Directeur / Responsable des Achats
+                                            </option>
+                                            <option value="acheteur_epicerie">Acheteur Épicerie Fine</option>
+                                            <option value="autre">Autre poste décisionnaire</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_phone">Téléphone Direct / WhatsApp
+                                            *</label>
+                                        <input type="tel" id="b2b_phone" class="input-custom"
+                                            placeholder="Ex. 06 12 34 56 78">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label-custom" for="b2b_volume">Volume de vanille estimé /
+                                            an</label>
+                                        <select id="b2b_volume" class="input-custom">
+                                            <option value="volume_test">Nouveau besoin / Test initial</option>
+                                            <option value="volume_small">Moins de 50 gousses / mois (&lt; 1kg épices)
+                                            </option>
+                                            <option value="volume_medium">50 à 200 gousses / mois (1kg à 5kg épices)
+                                            </option>
+                                            <option value="volume_large">+ de 200 gousses / mois (Gros volume
+                                                industriel/réseau)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label-custom" for="b2b_details">Précisions particulières
+                                            (Optionnel)</label>
+                                        <textarea id="b2b_details" rows="2" class="input-custom"
+                                            placeholder="Taille de gousse particulière (14-16cm), essais poivre voatsiperifery..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+                                    <button type="button" onclick="goToStep(1)" class="btn-cta btn-cta-secondary"
+                                        style="padding: 14px 24px;">
+                                        <i class="fa-solid fa-arrow-left"></i> Retour
+                                    </button>
+                                    <button type="submit" class="btn-cta btn-cta-primary" style="min-width: 280px;">
+                                        <i class="fa-solid fa-paper-plane"></i> Valider ma Demande de Kit Pro
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="text-center mt-4 pt-3 border-top">
+                            <p style="font-size: 0.82rem; color: var(--color-gray-600); margin: 0;">
+                                Kit offert aux établissements professionnels éligibles immatriculés (SIRET). Expédition
+                                Colissimo Pro sous-vide après validation de votre dossier.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAQ Section (Surtitre Éditorial : QUESTIONS FRÉQUENTES) -->
+    <section id="faq" class="section-py bg-light">
+        <div class="container">
+            <div class="text-center mb-5" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <!-- Surtitre Éditorial Gastronomique (sans pilule) -->
+                <span class="eyebrow-editorial" style="text-align: center;">Questions fréquentes</span>
+                <h2 style="text-align: center; margin-left: auto; margin-right: auto;">Tout savoir sur l'attribution de vos Kits Pro</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-card">
+                        <div class="faq-head" onclick="toggleFaqCard(this)">
+                            <h4>Pourquoi le numéro SIRET est-il obligatoire ?</h4>
+                            <div class="faq-icon-toggle"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-body">
+                            <p>Afin d'offrir des échantillons gratuitement et d'assurer un suivi de qualité, nos Kits
+                                Découverte sont exclusivement réservés aux établissements professionnels en activité
+                                (restaurants, pâtisseries, épiceries fines). Le SIRET permet de valider votre dossier
+                                sous 24h.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="faq-head" onclick="toggleFaqCard(this)">
+                            <h4>Que contient précisément le Kit Découverte Pro ?</h4>
+                            <div class="faq-icon-toggle"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-body">
+                            <p>Chaque kit est composé selon votre secteur (gousses de vanille Bourbon Gourmet,
+                                échantillons de poivre voatsiperifery ou d'épices d'exception, accompagnés de la fiche
+                                technique et de la grille tarifaire HT dégressive).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card">
+                        <div class="faq-head" onclick="toggleFaqCard(this)">
+                            <h4>Quels sont vos délais d'expédition du kit ?</h4>
+                            <div class="faq-icon-toggle"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                        <div class="faq-body">
+                            <p>Dès validation du numéro SIRET par notre conseiller commercial sous 24h, votre kit
+                                sous-vide est expédié par Colissimo Pro direct dans votre établissement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CTA Final Gastronomique (Brun Chocolat) -->
+    <section class="section-py bg-chocolate text-center">
+        <div class="container">
+
+            <h2 style="color: var(--color-white); font-size: 2.8rem; margin-bottom: 20px; text-align: center;">
+                Testez la différence Trésor d'Épices dans vos cuisines
+            </h2>
+            <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 36px auto; font-size: 1.1rem;">
+                Rejoignez les chefs et artisans exigeants. Remplissez le formulaire avec votre SIRET pour recevoir votre
+                Kit Découverte gratuit.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="#form-qualification" class="btn-cta btn-cta-primary">
+                    <i class="fa-solid fa-box-open"></i> Commander mon Kit Découverte Pro
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Minimal -->
+    <footer
+        style="background: #17110e; border-top: 1px solid rgba(255,255,255,0.05); padding: 36px 0; color: var(--color-gray-600); font-size: 0.85rem;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="m-0">&copy; 2026 Trésor d'Épices B2B • Direct Producteur Madagascar.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <span style="margin-right: 15px;"><i class="fa-solid fa-shield-check"></i> Verification SIRET
+                        Pro</span>
+                    <span><i class="fa-solid fa-truck"></i> Livraison Colissimo Pro 48h</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL Confirmation -->
+    <div id="modalSuccessQualification" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close-icon" onclick="closeModal('modalSuccessQualification')"><i
+                    class="fa-solid fa-xmark"></i></span>
+            <div class="modal-success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Demande de Kit Découverte reçue !</h3>
+            <p>Merci. Votre demande de Kit Pro a bien été transmise à notre équipe d'approvisionnement.</p>
+            <div
+                style="background: var(--color-light); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 24px; font-size: 0.88rem; text-align: left;">
+                <strong>Prochaines étapes de votre dossier :</strong><br>
+                1. Vérification du numéro SIRET sous 24h ouvrées.<br>
+                2. Validation du kit par votre conseiller dédié.<br>
+                3. Expédition de votre Kit Découverte Pro sous-vide.
+            </div>
+            <button class="btn-cta btn-cta-primary" onclick="closeModal('modalSuccessQualification')"
+                style="width: 100%;">Fermer</button>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Tab switching logic for Metiers
+        function switchMetier(index) {
+            document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', idx === index ? 'true' : 'false');
+            });
+            document.querySelectorAll('.tab-pane-content').forEach(pane => pane.classList.remove('active'));
+
+            document.querySelectorAll('.tab-btn')[index].classList.add('active');
+            document.getElementById(`metier-pane-${index}`).classList.add('active');
+        }
+
+        // Selection dynamique d'un Kit depuis les boutons des sections métiers + Scroll vers formulaire !
+        function selectKitAndScroll(kitValue) {
+            selectKitCard(kitValue);
+            const formSection = document.getElementById('form-qualification');
+            formSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Sélection visuelle de la carte Kit dans le formulaire
+        function selectKitCard(kitValue) {
+            document.getElementById('b2b_selected_kit').value = kitValue;
+            document.querySelectorAll('.kit-card-option').forEach(card => {
+                card.classList.remove('selected');
+                const btn = card.querySelector('.kit-card-btn');
+                if (btn) {
+                    btn.innerHTML = '<i class="fa-solid fa-plus"></i> Choisir ce kit';
+                }
+            });
+
+            const selectedCard = document.getElementById(`card_${kitValue}`);
+            if (selectedCard) {
+                selectedCard.classList.add('selected');
+                const btn = selectedCard.querySelector('.kit-card-btn');
+                if (btn) {
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Sélectionné';
+                }
+            }
+        }
+
+        // Form Step Navigation (2-Step Form)
+        function goToStep(stepNumber) {
+            if (stepNumber === 2) {
+                // Quick validation of step 1 fields
+                const company = document.getElementById('b2b_company');
+                const siret = document.getElementById('b2b_siret');
+                const email = document.getElementById('b2b_email');
+
+                if (!company.value.trim()) {
+                    company.focus();
+                    company.style.borderColor = '#c98e28';
+                    return;
+                }
+                if (!siret.value.trim()) {
+                    siret.focus();
+                    siret.style.borderColor = '#c98e28';
+                    return;
+                }
+                if (!email.value.trim() || !email.checkValidity()) {
+                    email.focus();
+                    email.style.borderColor = '#c98e28';
+                    return;
+                }
+            }
+
+            document.querySelectorAll('.form-step-pane').forEach(pane => pane.classList.remove('active'));
+            document.querySelectorAll('.progress-step-pill').forEach(pill => pill.classList.remove('active'));
+
+            document.getElementById(`form-step-${stepNumber}`).classList.add('active');
+            document.getElementById(`step-pill-${stepNumber}`).classList.add('active');
+        }
+
+        // FAQ Toggle ARIA Accessible
+        function toggleFaqCard(element) {
+            const card = element.parentElement;
+            const isOpen = card.classList.contains('active');
+
+            document.querySelectorAll('.faq-card').forEach(c => c.classList.remove('active'));
+            if (!isOpen) {
+                card.classList.add('active');
+            }
+        }
+
+        // Form Submit Handler (interception temporaire - ne rien faire pour le moment)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            // Soumission interceptée : aucune action pour le moment
+            return false;
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>
