@@ -882,6 +882,16 @@
             margin: 0 auto 20px auto;
         }
 
+        /* Utility Classes */
+        @media (min-width: 768px) {
+            .text-md-start { text-align: left !important; }
+            .text-md-center { text-align: center !important; }
+            .text-md-end { text-align: right !important; }
+            .justify-content-md-end { justify-content: flex-end !important; }
+            .justify-content-md-start { justify-content: flex-start !important; }
+            .footer-links-wrap { justify-content: flex-end !important; }
+        }
+
         /* Responsive Breakpoints */
         @media (max-width: 991px) {
             .hero-h1 {
@@ -1550,7 +1560,8 @@
                     <p class="m-0">&copy; 2026 Trésor d'Épices.</p>
                 </div>
                 <div class="col-md-7 text-center text-md-end">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <div class="footer-links-wrap"
+                        style="display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;">
                         <a href="https://www.tresordepices.fr" target="_blank" rel="noopener noreferrer"
                             style="color: var(--color-secondary); text-decoration: none; font-weight: 500; transition: opacity 0.2s;">
                             <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-right: 4px;"></i>www.tresordepices.fr
