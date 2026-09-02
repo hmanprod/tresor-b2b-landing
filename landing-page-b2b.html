@@ -23,26 +23,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Design Tokens - Trésor d'Épices (Maison Gastronomique B2B) */
+        /* Design Tokens - Trésor d'Épices (Maison Gastronomique B2B) — alignés sur tresordepices.fr (#291d1c / #4eac52) */
         :root {
-            --color-primary: #3d8840;
-            /* Vert Épice Signature */
-            --color-primary-hover: #2d682f;
-            --color-chocolate: #2c1a14;
-            /* Brun Chocolat Signature Gastronomie */
-            --color-chocolate-light: #3e261e;
+            --color-primary: #4eac52;
+            /* Vert Épice Signature — site #4eac52 (was #3d8840) */
+            --color-primary-hover: #3d8a41;
+            --color-chocolate: #291d1c;
+            /* Brun Chocolat Signature Gastronomie — site #291d1c (was #2c1a14) */
+            --color-chocolate-light: #3e2a28;
             --color-secondary: #c98e28;
             /* Or Vanille / Amber */
-            --color-dark: #181d19;
-            /* Noir Ardoise */
-            --color-dark-surface: #222924;
-            --color-light: #f9f7f2;
-            /* Blanc Cassé Crème Gastronomie */
+            --color-dark: #291d1c;
+            /* Noir Ardoise — aligné chocolat site */
+            --color-dark-surface: #1f1514;
+            --color-light: #f4f5f5;
+            /* Blanc Cassé — site #f4f5f5 (was #f9f7f2) */
             --color-white: #ffffff;
             --color-gray-100: #f0ece3;
             --color-gray-300: #d6d0c2;
-            --color-gray-600: #686e69;
-            --color-gray-800: #2d332f;
+            --color-gray-600: #6f6f87;
+            --color-gray-800: #291d1c;
 
             --font-title: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -295,19 +295,40 @@
             margin-right: 15px;
         }
 
-        /* Hero Section */
+        /* Hero Section — fond sombre site (#291d1c) + mil-dots, image conservée à droite */
         .b2b-hero {
             padding-top: 140px;
             padding-bottom: 80px;
-            background: linear-gradient(135deg, rgba(44, 26, 20, 0.03) 0%, rgba(249, 247, 242, 1) 60%);
+            background-color: var(--color-chocolate);
             position: relative;
+            overflow: hidden;
+        }
+
+        .b2b-hero .mil-dots {
+            position: absolute;
+            top: 0;
+            left: 91%;
+            width: 100px;
+            height: 600px;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.18) 15%, transparent 0);
+            background-size: 10px 10px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .b2b-hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-h1 {
+            font-family: var(--font-title);
             font-size: 3.2rem;
+            font-weight: 800;
             letter-spacing: -0.5px;
+            line-height: 1.08;
             margin-bottom: 20px;
-            color: var(--color-chocolate);
+            color: var(--color-white);
         }
 
         .hero-h1 span {
@@ -317,10 +338,12 @@
         }
 
         .hero-subtitle {
-            font-size: 1.15rem;
-            line-height: 1.6;
+            font-family: var(--font-body);
+            font-size: 1.08rem;
+            line-height: 1.65;
             margin-bottom: 32px;
-            max-width: 580px;
+            max-width: 560px;
+            color: rgba(255, 255, 255, 0.86);
         }
 
         .hero-cta-group {
@@ -335,8 +358,8 @@
             display: flex;
             gap: 20px;
             align-items: center;
-            font-size: 0.85rem;
-            color: var(--color-gray-600);
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.72);
             font-weight: 500;
             flex-wrap: wrap;
         }
@@ -345,67 +368,37 @@
             color: var(--color-primary);
         }
 
+        /* Surtitre hero sur fond sombre — Montserrat 600, secondary or */
+        .b2b-hero .badge-urgency {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.9);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .b2b-hero .badge-urgency i {
+            color: var(--color-secondary);
+        }
+
         .hero-visual-card {
             position: relative;
             background: var(--color-white);
-            padding: 16px;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--color-gray-100);
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .hero-visual-card img {
             width: 100%;
-            height: 420px;
+            height: 460px;
             object-fit: cover;
-            border-radius: var(--radius-md);
+            border-radius: 2px;
             display: block;
         }
 
+        /* Floating badges retirés sur hero sombre — conservés masqués pour authority bar */
         .floating-badge {
-            position: absolute;
-            background: var(--color-white);
-            padding: 14px 18px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            z-index: 5;
-        }
-
-        .floating-badge-1 {
-            top: 25px;
-            left: -20px;
-        }
-
-        .floating-badge-2 {
-            bottom: 35px;
-            right: -15px;
-        }
-
-        .floating-badge-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: rgba(61, 136, 64, 0.1);
-            color: var(--color-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-        }
-
-        .floating-badge h5 {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        .floating-badge p {
-            margin: 0;
-            font-size: 0.75rem;
-            color: var(--color-gray-600);
+            display: none !important;
         }
 
         /* Authority Bar */
@@ -980,12 +973,13 @@
         </div>
     </header>
 
-    <!-- 2. Hero Section (Pilule Promesse Commerciale : KIT PRO OFFERT • SIRET REQUIS) -->
+    <!-- 2. Hero Section — fond sombre #291d1c + mil-dots + image à droite conservée -->
     <section id="hero" class="b2b-hero">
+        <div class="mil-dots" aria-hidden="true"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <!-- Badge Pilule Commercial Raccourci -->
+                    <!-- Surtitre sur fond sombre -->
                     <div class="badge-urgency">
                         <i class="fa-solid fa-building-circle-check"></i> Kit Pro Offert • SIRET Requis
                     </div>
@@ -994,7 +988,7 @@
                     </h1>
                     <p class="hero-subtitle">
                         Approvisionnement direct de nos plantations à Sambava. Recevez un Kit Découverte complet
-                        (gousses de vanille Bourbon Gourmet & épices rares) réservé aux professionnels de la
+                        (gousses de vanille Bourbon Gourmet &amp; épices rares) réservé aux professionnels de la
                         restauration et du commerce.
                     </p>
 
@@ -1013,26 +1007,6 @@
 
                 <div class="col-lg-6">
                     <div class="hero-visual-card">
-                        <div class="floating-badge floating-badge-1">
-                            <div class="floating-badge-icon">
-                                <i class="fa-solid fa-award"></i>
-                            </div>
-                            <div>
-                                <h5>Vanille de Madagascar</h5>
-                                <p>Taux de vanilline certifié</p>
-                            </div>
-                        </div>
-
-                        <div class="floating-badge floating-badge-2">
-                            <div class="floating-badge-icon">
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                            <div>
-                                <h5>Priorité aux Pros</h5>
-                                <p>Validation dossier sous 24h</p>
-                            </div>
-                        </div>
-
                         <img src="https://www.tresordepices.fr/wp-content/uploads/2024/11/vanille_3gousses_16cm_2tubes_fond_fefffa_1200x1200.jpg"
                             alt="Vanille Bourbon Noire Gourmet Trésor d'Épices">
                     </div>
