@@ -1184,32 +1184,42 @@
 
                                 <div class="row g-3 mb-4">
                                     <div class="col-md-6">
-                                        <label class="form-label-custom" for="b2b_company">Nom de l'Établissement /
-                                            Société *</label>
-                                        <input type="text" id="b2b_company" class="input-custom"
+                                        <label class="form-label-custom" for="b2b_company">Nom de l'Établissement / Société *</label>
+                                        <input type="text" id="b2b_company" class="input-custom" autocomplete="organization"
                                             placeholder="Ex. Le Gourmet de Paris" required>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label class="form-label-custom" for="b2b_siret">
                                             Numéro SIRET (14 chiffres) *
-                                            <span class="label-hint"><i class="fa-solid fa-shield-halved"></i>
-                                                Obligatoire pour validation</span>
+                                            <span class="label-hint"><i class="fa-solid fa-shield-halved"></i> Obligatoire pour validation</span>
                                         </label>
-                                        <input type="text" id="b2b_siret" class="input-custom input-highlight"
-                                            placeholder="Ex. 123 456 789 00012" maxlength="18" required>
+                                        <input type="text" id="b2b_siret" class="input-custom input-highlight" inputmode="numeric" pattern="\d{14}" maxlength="14" autocomplete="off"
+                                            placeholder="Ex. 12345678900012" required>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-12">
+                                        <label class="form-label-custom" for="b2b_address">Adresse *</label>
+                                        <input type="text" id="b2b_address" class="input-custom" autocomplete="street-address"
+                                            placeholder="Ex. 12 rue de la Vanille" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label class="form-label-custom" for="b2b_postal_code">Code Postal *</label>
+                                        <input type="text" id="b2b_postal_code" class="input-custom" inputmode="numeric" pattern="\d{5}" maxlength="5" autocomplete="postal-code"
+                                            placeholder="Ex. 75008" required>
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <label class="form-label-custom" for="b2b_city">Ville *</label>
+                                        <input type="text" id="b2b_city" class="input-custom" autocomplete="address-level2"
+                                            placeholder="Ex. Paris" required>
+                                    </div>
+
+                                    <div class="col-12">
                                         <label class="form-label-custom" for="b2b_email">Email Professionnel *</label>
-                                        <input type="email" id="b2b_email" class="input-custom"
+                                        <input type="email" id="b2b_email" class="input-custom" autocomplete="email"
                                             placeholder="Ex. chef@etablissement.com" required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label class="form-label-custom" for="b2b_city">Ville & Code Postal *</label>
-                                        <input type="text" id="b2b_city" class="input-custom"
-                                            placeholder="Ex. 75008 Paris" required>
                                     </div>
                                 </div>
 
@@ -1270,11 +1280,22 @@
                                     </div>
 
                                     <div class="col-12">
+                                        <label id="b2b_need_label" class="form-label-custom" for="b2b_need">Votre besoin métier * <span class="label-hint">champ libre</span></label>
+                                        <textarea id="b2b_need" rows="3" class="input-custom" required
+                                            placeholder="Ex. service restauration continu, besoin vanille pâtisserie..."></textarea>
+                                    </div>
+
+                                    <div class="col-12">
                                         <label class="form-label-custom" for="b2b_details">Précisions particulières
                                             (Optionnel)</label>
                                         <textarea id="b2b_details" rows="2" class="input-custom"
                                             placeholder="Taille de gousse particulière (14-16cm), essais poivre voatsiperifery..."></textarea>
                                     </div>
+                                </div>
+
+                                <div class="form-check mb-3" style="text-align:left; display:flex; gap:10px; align-items:flex-start;">
+                                    <input type="checkbox" id="b2b_cgu" required style="margin-top:4px; width:18px; height:18px; accent-color: var(--color-primary); flex-shrink:0;">
+                                    <label for="b2b_cgu" style="font-size:0.84rem; color: var(--color-gray-600); font-weight:500; cursor:pointer;">J'accepte les <a href="https://www.tresordepices.fr/cgu" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration:underline;">CGU</a> et la <a href="https://www.tresordepices.fr/mentions-legales" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration:underline;">politique de confidentialité</a> *</label>
                                 </div>
 
                                 <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
@@ -1493,7 +1514,15 @@
             document.getElementById('form-qualification').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Sélection kit + MAJ instantanée du détail composition (sans tabs)
+        // Besoin métier dynamique selon kit
+        const needConfig = {
+            kit_resto_hotellerie: { label: 'Votre besoin restauration / hôtellerie *', placeholder: 'Ex. nb couverts/jour, service continu, besoin petit-déjeuner, volumes mensuels...' },
+            kit_chefs_patissiers: { label: 'Votre besoin chef / pâtissier *', placeholder: 'Ex. ganaches, glaces, entremets, % vanilline souhaitée, poudre ou gousse...' },
+            kit_distributeurs: { label: 'Votre besoin distribution *', placeholder: 'Ex. tubes 3/5 gousses, PLV souhaitée, marge cible, volumes revente...' },
+            kit_industries: { label: 'Votre besoin industriel *', placeholder: 'Ex. kg/mois, lots homogènes, cadencement, contraintes traçabilité...' }
+        };
+
+        // Sélection kit + MAJ instantanée du détail composition (sans tabs) + besoin
         function selectKitCard(kitValue) {
             document.getElementById('b2b_selected_kit').value = kitValue;
             document.querySelectorAll('.kit-card-option').forEach(card => {
@@ -1506,31 +1535,32 @@
             document.querySelectorAll('#kit-detail-pane .kit-detail').forEach(detail => {
                 detail.classList.toggle('active', detail.getAttribute('data-kit') === kitValue);
             });
+            const cfg = needConfig[kitValue];
+            if (cfg) {
+                const label = document.getElementById('b2b_need_label');
+                const need = document.getElementById('b2b_need');
+                if (label) label.childNodes[0].textContent = cfg.label + ' ';
+                if (need) need.placeholder = cfg.placeholder;
+            }
         }
 
         // Form Step Navigation (2-Step Form)
         function goToStep(stepNumber) {
             if (stepNumber === 2) {
-                // Quick validation of step 1 fields
                 const company = document.getElementById('b2b_company');
                 const siret = document.getElementById('b2b_siret');
+                const address = document.getElementById('b2b_address');
+                const postal = document.getElementById('b2b_postal_code');
+                const city = document.getElementById('b2b_city');
                 const email = document.getElementById('b2b_email');
+                const siretDigits = siret.value.replace(/\s/g, '');
 
-                if (!company.value.trim()) {
-                    company.focus();
-                    company.style.borderColor = '#c98e28';
-                    return;
-                }
-                if (!siret.value.trim()) {
-                    siret.focus();
-                    siret.style.borderColor = '#c98e28';
-                    return;
-                }
-                if (!email.value.trim() || !email.checkValidity()) {
-                    email.focus();
-                    email.style.borderColor = '#c98e28';
-                    return;
-                }
+                if (!company.value.trim()) { company.focus(); company.style.borderColor = '#c98e28'; return; }
+                if (!/^\d{14}$/.test(siretDigits)) { siret.focus(); siret.style.borderColor = '#c98e28'; return; }
+                if (!address.value.trim()) { address.focus(); address.style.borderColor = '#c98e28'; return; }
+                if (!/^\d{5}$/.test(postal.value.trim())) { postal.focus(); postal.style.borderColor = '#c98e28'; return; }
+                if (!city.value.trim()) { city.focus(); city.style.borderColor = '#c98e28'; return; }
+                if (!email.value.trim() || !email.checkValidity()) { email.focus(); email.style.borderColor = '#c98e28'; return; }
             }
 
             document.querySelectorAll('.form-step-pane').forEach(pane => pane.classList.remove('active'));
@@ -1538,6 +1568,8 @@
 
             document.getElementById(`form-step-${stepNumber}`).classList.add('active');
             document.getElementById(`step-pill-${stepNumber}`).classList.add('active');
+            // Scroll vers le haut du formulaire pour voir la nouvelle étape
+            document.getElementById('form-qualification').scrollIntoView({ behavior: 'smooth' });
         }
 
         // FAQ Toggle ARIA Accessible
@@ -1551,10 +1583,22 @@
             }
         }
 
-        // Form Submit Handler (interception temporaire - ne rien faire pour le moment)
+        // Form Submit Handler (validation CGU + besoin)
         function handleFormSubmit(e) {
             e.preventDefault();
-            // Soumission interceptée : aucune action pour le moment
+            const need = document.getElementById('b2b_need');
+            const cgu = document.getElementById('b2b_cgu');
+            const fullname = document.getElementById('b2b_fullname');
+            const role = document.getElementById('b2b_role');
+
+            if (!fullname.value.trim()) { fullname.focus(); fullname.style.borderColor = '#c98e28'; return false; }
+            if (!role.value) { role.focus(); role.style.borderColor = '#c98e28'; return false; }
+            if (!need.value.trim()) { need.focus(); need.style.borderColor = '#c98e28'; return false; }
+            if (!cgu.checked) { cgu.focus(); cgu.style.outline = '2px solid #c98e28'; return false; }
+            cgu.style.outline = '';
+
+            // Afficher modale de confirmation (simulé)
+            document.getElementById('modalSuccessQualification').classList.add('active');
             return false;
         }
 
