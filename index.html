@@ -1056,7 +1056,7 @@
                         </div>
 
                         <form id="b2bQualificationForm" onsubmit="handleFormSubmit(event)">
-                            <input type="hidden" id="b2b_selected_kit" value="kit_restauration">
+                            <input type="hidden" id="b2b_selected_kit" value="kit_resto_hotellerie">
 
                             <!-- ÉTAPE 1 : Choix Kit + SIRET + Email -->
                             <div class="form-step-pane active" id="form-step-1">
@@ -1066,103 +1066,103 @@
                                 </div>
 
                                 <div class="kit-selector-grid">
-                                    <div class="kit-card-option selected" id="card_kit_restauration" role="radio" aria-checked="true" tabindex="0"
-                                        onclick="selectKitCard('kit_restauration')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_restauration')}">
+                                    <div class="kit-card-option selected" id="card_kit_resto_hotellerie" role="radio" aria-checked="true" tabindex="0"
+                                        onclick="selectKitCard('kit_resto_hotellerie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_resto_hotellerie')}">
                                         <div class="kit-card-icon"><i class="fa-solid fa-utensils"></i></div>
-                                        <div class="kit-card-title">Kit Restaurateurs</div>
-                                        <p class="kit-card-desc">Chefs & Restauration</p>
+                                        <div class="kit-card-title">Kit Restaurateurs & Hôtellerie</div>
+                                        <p class="kit-card-desc">Restaurants & Hôtels</p>
                                         <span class="kit-card-btn"><i class="fa-solid fa-check"></i> Sélectionné</span>
                                     </div>
-                                    <div class="kit-card-option" id="card_kit_artisans" role="radio" aria-checked="false" tabindex="0"
-                                        onclick="selectKitCard('kit_artisans')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_artisans')}">
+                                    <div class="kit-card-option" id="card_kit_chefs_patissiers" role="radio" aria-checked="false" tabindex="0"
+                                        onclick="selectKitCard('kit_chefs_patissiers')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_chefs_patissiers')}">
                                         <div class="kit-card-icon"><i class="fa-solid fa-cookie-bite"></i></div>
-                                        <div class="kit-card-title">Kit Artisans</div>
-                                        <p class="kit-card-desc">Pâtissiers & Glaciers</p>
+                                        <div class="kit-card-title">Kit Chefs, Pâtissiers</div>
+                                        <p class="kit-card-desc">Chocolatiers, Glaciers</p>
                                         <span class="kit-card-btn"><i class="fa-solid fa-plus"></i> Choisir ce kit</span>
                                     </div>
-                                    <div class="kit-card-option" id="card_kit_epicerie" role="radio" aria-checked="false" tabindex="0"
-                                        onclick="selectKitCard('kit_epicerie')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_epicerie')}">
+                                    <div class="kit-card-option" id="card_kit_distributeurs" role="radio" aria-checked="false" tabindex="0"
+                                        onclick="selectKitCard('kit_distributeurs')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_distributeurs')}">
                                         <div class="kit-card-icon"><i class="fa-solid fa-store"></i></div>
-                                        <div class="kit-card-title">Kit Revendeurs</div>
-                                        <p class="kit-card-desc">Épiceries Fines</p>
+                                        <div class="kit-card-title">Kit Distributeurs</div>
+                                        <p class="kit-card-desc">Épiceries, Revendeurs</p>
                                         <span class="kit-card-btn"><i class="fa-solid fa-plus"></i> Choisir ce kit</span>
                                     </div>
-                                    <div class="kit-card-option" id="card_kit_hotel" role="radio" aria-checked="false" tabindex="0"
-                                        onclick="selectKitCard('kit_hotel')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_hotel')}">
-                                        <div class="kit-card-icon"><i class="fa-solid fa-hotel"></i></div>
-                                        <div class="kit-card-title">Kit Hôtellerie</div>
-                                        <p class="kit-card-desc">Hôtels & Grands Comptes</p>
+                                    <div class="kit-card-option" id="card_kit_industries" role="radio" aria-checked="false" tabindex="0"
+                                        onclick="selectKitCard('kit_industries')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectKitCard('kit_industries')}">
+                                        <div class="kit-card-icon"><i class="fa-solid fa-industry"></i></div>
+                                        <div class="kit-card-title">Kit Industries</div>
+                                        <p class="kit-card-desc">Agroalimentaire & Volume</p>
                                         <span class="kit-card-btn"><i class="fa-solid fa-plus"></i> Choisir ce kit</span>
                                     </div>
                                 </div>
 
                                 <!-- Détail composition kit sélectionné — MAJ instantanée au clic sur card -->
                                 <div id="kit-detail-pane" aria-live="polite">
-                                    <div class="kit-detail active" data-kit="kit_restauration">
+                                    <div class="kit-detail active" data-kit="kit_resto_hotellerie">
                                         <div class="row align-items-center">
                                             <div class="col-lg-7">
                                                 <span class="eyebrow-editorial" style="margin-bottom:8px; display:inline-block;">Un kit adapté à votre métier</span>
-                                                <h3>Kit Découverte Chefs & Restaurateurs</h3>
-                                                <p>Des gousses noires Gourmet souples et charnues, idéales pour libérer un parfum intense et des grains généreux dans vos crémeux, sauces et desserts signatures.</p>
+                                                <h3>Kit Restaurateurs & Hôtellerie</h3>
+                                                <p>Des gousses Noire Gourmet charnues et régulières pour une qualité constante en service continu : cuisine, pâtisserie et petit-déjeuner hôtelier.</p>
                                                 <ul class="feature-check-list">
-                                                    <li><i class="fa-solid fa-circle-check"></i> 3 Gousses Vanille Bourbon Noire Gourmet (14-16 cm)</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Fiche technique accords mets, sauces & desserts</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Grille tarifaire dégressive spéciale restauration HT</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Gousses Vanille Bourbon Noire Gourmet (14-16 cm) — lot service</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Dosages cuisine & pâtisserie hôtel + fiche technique</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Grille tarifaire HT restauration / hôtellerie & cadencement</li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center mt-3 mt-lg-0">
-                                                <img src="assets/img/chef_restaurateur.jpg" alt="Chef restaurateur sélectionnant des gousses de vanille Bourbon" class="metier-img">
+                                                <img src="assets/img/serveur_hotel.jpg" alt="Service en restauration et hôtellerie avec vanille Bourbon" class="metier-img">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="kit-detail" data-kit="kit_artisans">
+                                    <div class="kit-detail" data-kit="kit_chefs_patissiers">
                                         <div class="row align-items-center">
                                             <div class="col-lg-7">
                                                 <span class="eyebrow-editorial" style="margin-bottom:8px; display:inline-block;">Un kit adapté à votre métier</span>
-                                                <h3>Kit Découverte Artisans Glaciers & Pâtissiers</h3>
-                                                <p>Des gousses riches en vanilline (1,6 à 2,4 %) pour sublimer vos glaces, crèmes, ganaches et entremets avec un parfum naturel incomparable.</p>
+                                                <h3>Kit Chefs Cuisiniers, Pâtissiers</h3>
+                                                <p>Pour chocolatiers, glaciers et pâtissiers exigeants : gousses riches en vanilline (1,6–2,4 %) + extraits pour incorporations haute précision.</p>
                                                 <ul class="feature-check-list">
-                                                    <li><i class="fa-solid fa-circle-check"></i> Gousses Noire Gourmet & TK d'extraction riches en vanilline</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Conseils de dosage au kilo pour turbines & crèmes</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Fiche technique d'incorporation & conseils pro</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Gousses Noire Gourmet & TK extraction — haute vanilline</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Dosages au kilo (ganache, crème, glace) + fiches techniques</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Échantillons poudre / extrait naturel & grille pro</li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center mt-3 mt-lg-0">
-                                                <img src="assets/img/patissier.jpg" alt="Pâtissière préparant un dessert à la vanille Bourbon" class="metier-img">
+                                                <img src="assets/img/patissier.jpg" alt="Chef pâtissier / chocolatier travaillant la vanille Bourbon" class="metier-img">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="kit-detail" data-kit="kit_epicerie">
+                                    <div class="kit-detail" data-kit="kit_distributeurs">
                                         <div class="row align-items-center">
                                             <div class="col-lg-7">
                                                 <span class="eyebrow-editorial" style="margin-bottom:8px; display:inline-block;">Un kit adapté à votre métier</span>
-                                                <h3>Kit Découverte Épiceries Fines & Revendeurs</h3>
-                                                <p>Offrez à votre clientèle exigeante un produit d'exception au packaging élégant. Histoire forte de la plantation familiale à valoriser en boutique.</p>
+                                                <h3>Kit Distributeurs</h3>
+                                                <p>Pensé pour épiceries fines et revendeurs : packaging premium prêt à vendre et marges étudiées pour la revente.</p>
                                                 <ul class="feature-check-list">
-                                                    <li><i class="fa-solid fa-circle-check"></i> Tubes en verre de présentation (3 & 5 gousses 16 cm)</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Étui cadeau Vanille Bourbon Noire Gourmet</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Catalogue revendeur & conditions de marge boutique</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Tubes verre 3 & 5 gousses 16 cm + étui cadeau</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> PLV & argumentaire plantation familiale Sambava</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Catalogue revendeur & conditions de marge</li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center mt-3 mt-lg-0">
-                                                <img src="assets/img/epicier.jpg" alt="Épicière fine présentant des tubes de vanille Bourbon" class="metier-img">
+                                                <img src="assets/img/epicier.jpg" alt="Épicerie fine / distributeur présentant tubes de vanille Bourbon" class="metier-img">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="kit-detail" data-kit="kit_hotel">
+                                    <div class="kit-detail" data-kit="kit_industries">
                                         <div class="row align-items-center">
                                             <div class="col-lg-7">
                                                 <span class="eyebrow-editorial" style="margin-bottom:8px; display:inline-block;">Un kit adapté à votre métier</span>
-                                                <h3>Kit Découverte Hôtels & Pôles Restauration</h3>
-                                                <p>Assurez une qualité constante sur l'ensemble de vos points de vente culinaire. Contrats d'approvisionnement annuel et tarifs préférentiels par volume.</p>
+                                                <h3>Kit Industries</h3>
+                                                <p>Pour l’agroalimentaire et les volumes : approvisionnement sécurisé, lots homogènes et traçabilité complète de la plantation au conditionnement.</p>
                                                 <ul class="feature-check-list">
-                                                    <li><i class="fa-solid fa-circle-check"></i> Conditionnements sous-vide pro (100 g, 250 g, 10 gousses 17-18 cm)</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Conditions d'approvisionnement grands comptes</li>
-                                                    <li><i class="fa-solid fa-circle-check"></i> Étude personnalisée de cadencement des stocks</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Lots sous-vide pro (100 g, 250 g, 1 kg) — homogénéité vanilline</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Fiches techniques industrielles & certificats traçabilité</li>
+                                                    <li><i class="fa-solid fa-circle-check"></i> Contrat volume, cadencement & tarif HT industriel</li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-5 d-flex justify-content-lg-end justify-content-center mt-3 mt-lg-0">
-                                                <img src="assets/img/serveur_hotel.jpg" alt="Maître d'hôtel présentant la vanille Bourbon de Madagascar" class="metier-img">
+                                                <img src="assets/img/chef_restaurateur.jpg" alt="Production en volume industrie agroalimentaire vanille" class="metier-img">
                                             </div>
                                         </div>
                                     </div>
@@ -1238,11 +1238,12 @@
                                         <label class="form-label-custom" for="b2b_role">Votre Fonction *</label>
                                         <select id="b2b_role" class="input-custom">
                                             <option value="">Sélectionnez votre poste</option>
-                                            <option value="chef_cuisinier">Chef de Cuisine / Pâtissier</option>
-                                            <option value="gerant_proprietaire">Gérant / Propriétaire</option>
-                                            <option value="responsable_achats">Directeur / Responsable des Achats
-                                            </option>
-                                            <option value="acheteur_epicerie">Acheteur Épicerie Fine</option>
+                                            <option value="chef_cuisinier">Chef / Cuisinier</option>
+                                            <option value="chef_patissier">Pâtissier / Chocolatier / Glacier</option>
+                                            <option value="gerant_proprietaire">Gérant / Propriétaire (Restauration/Hôtellerie)</option>
+                                            <option value="acheteur_distributeur">Acheteur Distributeur / Épicerie Fine</option>
+                                            <option value="acheteur_industrie">Acheteur Industrie Agroalimentaire</option>
+                                            <option value="responsable_achats">Directeur / Responsable Achats</option>
                                             <option value="autre">Autre poste décisionnaire</option>
                                         </select>
                                     </div>
